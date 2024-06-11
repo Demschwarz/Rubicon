@@ -27,7 +27,13 @@ public class DataBlock {
         }
     }
 
-    public void setData(int index, Object whatToSet){this.data[index+2] = whatToSet;}
+    public void setData(int index, Object whatToSet){
+        try{
+            this.data[index+2] = whatToSet;
+        } catch (Exception e){
+            System.out.println("Что-то пошло не так");
+        }
+    }
 
     public int getCellTypeId(int index) {return ((int[])this.data[0])[index]%256;}
 
