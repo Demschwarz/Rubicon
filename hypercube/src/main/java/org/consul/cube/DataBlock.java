@@ -20,7 +20,11 @@ public class DataBlock {
     }
 
     public boolean hasData(int paramIndex){
-        return this.data[paramIndex + 2] != null;
+        try{
+            return this.data[paramIndex + 2] != null;
+        } catch (Exception e){
+            return false;
+        }
     }
 
     public void setData(int index, Object whatToSet){this.data[index+2] = whatToSet;}
